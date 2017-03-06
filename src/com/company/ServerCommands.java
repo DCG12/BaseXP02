@@ -48,8 +48,7 @@ public final class ServerCommands {
             System.out.println("Para saber la información sobre Alemania pulse  --------------- 3");
             System.out.println("Para saber cuanta gente vive en Uganda pulse ------------------ 4");
             System.out.println("Para saber las ciudades de Peru pulse ------------------------- 5");
-            System.out.println("Para saber cuanta gente vive en Shangai pulse ----------------- 6");
-            System.out.println("Para saber el codigo de la matricula de coche de xipre pulse -- 7");
+            System.out.println("Para saber el codigo de la matricula de coche de xipre pulse -- 6");
             System.out.println(" ");
             // Run a query
             System.out.println("\n* Run a query:");
@@ -83,7 +82,13 @@ public final class ServerCommands {
                     break;
 
                 case 5:
-                    try (ClientQuery query = session.query("/factbook/record[country=\"Uganda\"]/people/population")) {
+                    try (ClientQuery query = session.query("/factbook/record[country=\"Peru\"]/transportation/ports_and_harbors")) {
+                        System.out.println(query.execute());
+                    }
+                    break;
+
+                case 6:
+                    try (ClientQuery query = session.query("/factbook/record[country=\"Cyprus\"]/economy/currency_code")) {
                         System.out.println(query.execute());
                     }
                     break;
